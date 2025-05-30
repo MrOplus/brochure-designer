@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .canvas-container {
+    @apply relative overflow-hidden border border-gray-200 rounded-lg shadow-sm;
+  }
+  
+  .toolbar {
+    @apply flex items-center gap-2 p-3 bg-white border-b border-gray-200;
+  }
+  
+  .element-item {
+    @apply p-3 bg-white border border-gray-200 rounded-lg cursor-move hover:shadow-md transition-shadow;
+  }
+  
+  .element-item:hover {
+    @apply border-blue-300;
+  }
+}
+
+.fabric-canvas {
+  border: 1px solid #e5e7eb !important;
+}
