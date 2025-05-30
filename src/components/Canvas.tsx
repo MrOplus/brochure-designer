@@ -8,7 +8,6 @@ interface CanvasProps {
   onSelectElement: (id: string | null) => void;
   onUpdateElement: (id: string, updates: Partial<BrochureElement>) => void;
   onDeleteElement: (id: string) => void;
-  onAddElement: (element: Omit<BrochureElement, 'id'>) => void;
   pageSize: PageSize;
 }
 
@@ -34,7 +33,6 @@ export const Canvas: React.FC<CanvasProps> = ({
   onSelectElement,
   onUpdateElement,
   onDeleteElement,
-  onAddElement,
   pageSize,
 }) => {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -55,7 +53,7 @@ export const Canvas: React.FC<CanvasProps> = ({
 
   const [, drop] = useDrop(() => ({
     accept: 'element',
-    drop: (item, monitor) => {
+    drop: (_, monitor) => {
       const offset = monitor.getClientOffset();
       const canvasRect = canvasRef.current?.getBoundingClientRect();
       if (offset && canvasRect) {

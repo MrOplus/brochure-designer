@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDrag } from 'react-dnd';
-import { Type, Image, Square, Circle, Star, Upload, ArrowRight, Minus, Camera } from 'lucide-react';
+import { Type, Image, Square, Circle, Star, Upload, ArrowRight, Minus } from 'lucide-react';
 import { BrochureElement } from '../App';
 
 interface SidebarProps {

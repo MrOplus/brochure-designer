@@ -10,4 +10,16 @@ export default defineConfig({
       "@": resolve(__dirname, "./src"),
     },
   },
+  // GitHub Pages deployment configuration
+  base: process.env.VITE_BASE_PATH || '/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    // Ensure proper asset handling for GitHub Pages
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
 })
